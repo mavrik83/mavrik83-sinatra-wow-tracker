@@ -3,14 +3,14 @@ class CreateCharacters < ActiveRecord::Migration[4.2]
     def change
         create_table :characters do |t|
             t.string :name
-            t.string :intellect
-            t.string :strength
-            t.string :stamina
-            t.string :agility
-            t.string :haste
-            t.string :versatility
-            t.string :mastery
-            t.string :crit_chance
+            t.integer :intellect
+            t.integer :strength
+            t.integer :stamina
+            t.integer :agility
+            t.integer :haste
+            t.integer :versatility
+            t.integer :mastery
+            t.integer :crit_chance
             t.integer :user_id
         end
     end
