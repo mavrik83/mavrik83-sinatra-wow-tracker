@@ -9,6 +9,9 @@ class ApplicationController < Sinatra::Base
         set :session_secret, "trytofigurethisout"
     end
 
+    get '/' do
+        erb :index
+    end
 
 
 end
