@@ -1,1 +1,7 @@
 <h3>Here is a list of your characters:</h3>
+
+<% @user.characters.each do |t| %>
+    <div>
+    <%= t.name %>
+    </div>
+<% end %>
