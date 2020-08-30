@@ -6,6 +6,7 @@ class CharacterController < ApplicationController
             erb :'users/show'
         else
             redirect to '/'
+        end
     end
 
 end
