@@ -9,4 +9,6 @@ class CharacterController < ApplicationController
         end
     end
 
+    
+
 end
