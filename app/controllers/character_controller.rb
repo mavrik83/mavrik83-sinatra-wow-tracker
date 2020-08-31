@@ -1,14 +1,14 @@
 class CharacterController < ApplicationController
 
-    get '/characters' do
+    post '/characters' do
         if logged_in?
-            @characters = Character.all
-            erb :'users/show'
+            #@characters = Character.all
+            erb :'characters/characters'
         else
             redirect to '/'
         end
     end
 
-    
+
 
 end
