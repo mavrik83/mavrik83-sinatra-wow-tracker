@@ -4,10 +4,14 @@
 <ul>
 <% @characters.each do |n|%>
     <li>
-        <h5> <a href=<%="/character/#{n.id}"%>><%= n.name %></a></h5>
+        <h5> <a href=<%="/character/#{n.id}"%>><%= n.name.capitalize %></a></h5>
     </li>
 <% end %>
 </ul>
+<form method="get" action="/add_character">
+    <input class="btn btn-primary" type="submit" value="Add New Character">
+</form>
+<br>
 <form method="get" action="/logout">
     <input class="btn btn-primary" type="submit" value="Logout">
 </form>
