@@ -31,3 +31,14 @@ In your favorite command prompt shell, run the following:
 I have included some seed data. If you want to test out the app without having to create a bunch of users and characters, make sure to run `rake db:seed`.
 
 Have fun!
+
+## Contributing to WoW Tracker
+I would love your input! I want to make contributing to this project as easy and transparent as possible, whether it's:
+
+- Reporting a bug
+- Discussing the current state of the code
+- Submitting a fix
+- Proposing new features
+
+## License
+By contributing, you agree that your contributions will be licensed under its MIT License.
