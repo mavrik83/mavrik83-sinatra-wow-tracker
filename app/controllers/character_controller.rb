@@ -55,21 +55,26 @@ class CharacterController < ApplicationController
         if ['!', '?', ';', '(', ')', '#'].any?{ |sym| name.include?(sym) } || name == ""
             redirect to '/add_character' 
         else
-        else
-          @character = @current_user.Character.new(
-              :name => params[:name],
-              :intellect => params[:intellect],
-              :strength => params[:strength],
-              :stamina => params[:stamina],
-              :agility => params[:agility],
-              :haste => params[:haste],
-              :versatility => params[:versatility],
-              :mastery => params[:mastery],
-              :crit_chance => params[:crit_chance]
-          )
-          @character.save
-          redirect to '/characters'
+            @character = Character.new(
+                :name => params[:name],
+                :intellect => params[:intellect],
+                :strength => params[:strength],
+                :stamina => params[:stamina],
+                :agility => params[:agility],
+                :haste => params[:haste],
+                :versatility => params[:versatility],
+                :mastery => params[:mastery],
+                :crit_chance => params[:crit_chance]
+            )
+            @character.user_id = current_user.id
+            @character.save
+            redirect to '/characters'
         end
-      end
+    end
+
+        else
+            redirect to '/'
+        end
+    end
 
 end
