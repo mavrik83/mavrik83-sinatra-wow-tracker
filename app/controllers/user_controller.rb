@@ -29,6 +29,12 @@ class UserController < ApplicationController
       end
     end
     
+    get '/login' do
+      if !logged_in?
+        erb :'users/login'
+      else
+        redirect to '/characters'
       end
+    end
     
 end
