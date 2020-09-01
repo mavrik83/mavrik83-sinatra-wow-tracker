@@ -30,7 +30,7 @@ class CharacterController < ApplicationController
         end
     end
 
-    post '/character/:id/delete' do
+    get '/character/:id/delete' do
         if logged_in?
             @character = Character.find(params[:id])
             if @character && @character.user == current_user
