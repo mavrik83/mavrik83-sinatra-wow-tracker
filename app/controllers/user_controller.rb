@@ -11,6 +11,7 @@ class UserController < ApplicationController
       else
         redirect to '/characters'
       end
+    end
     
           redirect to '/characters'
         else
