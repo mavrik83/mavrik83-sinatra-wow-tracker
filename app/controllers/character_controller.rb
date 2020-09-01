@@ -51,8 +51,10 @@ class CharacterController < ApplicationController
     end
 
     post '/add_character' do
-        if params[:name] == ""
-          redirect to '/add_character'
+        name = params[:name]
+        if ['!', '?', ';', '(', ')', '#'].any?{ |sym| name.include?(sym) } || name == ""
+            redirect to '/add_character' 
+        else
         else
           @character = @current_user.Character.new(
               :name => params[:name],
