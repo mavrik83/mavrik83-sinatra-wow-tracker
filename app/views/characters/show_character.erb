@@ -3,7 +3,8 @@
         <%= @character.name.capitalize %>
     </h2>
     <ul>
-        <% (Character.last.attributes.keys - ["user_id", "id", "name"]).each do |attr| %>
+        <% @character.as_json.each do |attr, value| %>
+            <% next if ['id', 'name', 'user_id'].include?(attr) %>
             <li>
                 <%= "#{attr.capitalize} : #{@character.send(attr)}" %>
             </li>
