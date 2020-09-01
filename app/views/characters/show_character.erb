@@ -1,12 +1,11 @@
-<h1>Test</h1>
 <div>
     <h2>
-        <%= @character.name %>
+        <%= @character.name.capitalize %>
     </h2>
     <ul>
-        <% (Character.last.attributes.keys - ["user_id", "id"]).each do |attr| %>
+        <% (Character.last.attributes.keys - ["user_id", "id", "name"]).each do |attr| %>
             <li>
-                <%= "#{attr.capitalize} : #{@character.send(attr).to_s.capitalize}" %>
+                <%= "#{attr.capitalize} : #{@character.send(attr)}" %>
             </li>
         <% end %>
     </ul>
@@ -15,3 +14,8 @@
 <form method="get" action="/logout">
     <input class="btn btn-primary" type="submit" value="Logout">
 </form>
+<br>
+<form method="post" action="/character/<%= @character.id %>/delete">
+    <input class="btn btn-primary" type="submit" value="Delete Character">
+</form>
+
