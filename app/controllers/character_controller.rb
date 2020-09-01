@@ -2,10 +2,7 @@ class CharacterController < ApplicationController
 
     get '/characters' do
         if logged_in?
-            # .characters is an active record method that was auto 
-            # created by the model having the correct has_many and belongs_to
             @characters = current_user.characters
-            # @characters = Character.where(user_id)
             erb :'characters/characters'
         else
             redirect to '/'
