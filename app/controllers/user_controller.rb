@@ -18,9 +18,12 @@ class UserController < ApplicationController
           redirect to '/signup'
         else
           @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
-          @user.save
-          session[:user_id] = @user.id
-          redirect to '/characters'
+          if @user.save
+            session[:user_id] = @user.id
+            redirect to '/characters'
+          else
+            redirect to '/'
+          end
         end
       end
     
@@ -38,7 +41,7 @@ class UserController < ApplicationController
           session[:user_id] = user.id
           redirect to "/characters"
         else
-          redirect to '/signup'
+          redirect to '/'
         end
       end
     
