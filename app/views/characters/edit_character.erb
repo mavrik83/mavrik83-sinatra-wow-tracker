@@ -1,5 +1,18 @@
 <h1>Test</h1>
 
+<form action=<%= "/characters/#{params[:id]}/edit" %> method="post">
+  <p>Name: <input type="text" name="name" value="<%= @character.name %>"></p>
+  <p>Intellect: <input type="number" name="intellect" value="<%= @character.intellect %>"></p>
+  <p>Strength: <input type="number" name="strength" value="<%= @character.strength %>"></p>
+  <p>Stamina: <input type="number" name="stamina" value="<%= @character.stamina %>"></p>
+  <p>Agility: <input type="number" name="agility" value="<%= @character.agility %>"></p>
+  <p>Haste: <input type="number" name="haste" value="<%= @character.haste %>"></p>
+  <p>Versatility: <input type="number" name="versatility" value="<%= @character.versatility %>"></p>
+  <p>Mastery: <input type="number" name="mastery" value="<%= @character.mastery %>"></p>
+  <p>Crit Chance: <input type="number" name="crit_chance" value="<%= @character.crit_chance %>"></p>
+  <input class="btn btn-primary" type="submit">
+</form>
+
 
 
 
