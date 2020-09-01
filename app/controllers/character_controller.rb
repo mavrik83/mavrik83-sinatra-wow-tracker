@@ -24,7 +24,11 @@ class CharacterController < ApplicationController
     get '/character/:id' do
         if logged_in?
             @character = Character.find(params[:id])
-            erb :'characters/show_character'
+            if @character && @character.user == current_user
+                erb :'characters/show_character'
+            else
+                redirect to '/'
+            end
         else
             redirect to '/'
         end
