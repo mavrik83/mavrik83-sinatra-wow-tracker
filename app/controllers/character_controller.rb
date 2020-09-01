@@ -41,4 +41,29 @@ class CharacterController < ApplicationController
             redirect to '/'
         end
     end
+
+    get '/add_character' do
+        erb :'characters/add_character'
+    end
+
+    post '/add_character' do
+        if params[:name] == ""
+          redirect to '/add_character'
+        else
+          @character = @current_user.Character.new(
+              :name => params[:name],
+              :intellect => params[:intellect],
+              :strength => params[:strength],
+              :stamina => params[:stamina],
+              :agility => params[:agility],
+              :haste => params[:haste],
+              :versatility => params[:versatility],
+              :mastery => params[:mastery],
+              :crit_chance => params[:crit_chance]
+          )
+          @character.save
+          redirect to '/characters'
+        end
+      end
+
 end
