@@ -13,6 +13,11 @@ class UserController < ApplicationController
       end
     end
     
+    post '/signup' do
+      name = params[:username]
+      email = params[:email]
+      if ['!', '?', ';', '(', ')', '#'].any?{ |sym| name.include?(sym) || email.include?(sym) } || name == "" || email == "" || params[:password] == ""
+        redirect to '/signup'
           redirect to '/characters'
         else
           redirect to '/'
