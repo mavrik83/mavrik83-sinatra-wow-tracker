@@ -12,18 +12,14 @@
                 </li>
             </ul>
         <% end %>
-    </ul>
+    </div>
 </div>
+<br>
 <div>
-    <a class="btn btn-primary" href=<%="/character/#{@character.id}/edit"%>>Edit Character</a>
+    <a class="btn btn-dark" href=<%="/character/#{@character.id}/edit"%>>Edit Character</a>
+    <a class="btn btn-dark" href=<%="/character/#{@character.id}/delete"%>>Delete Character</a>
+    <br><br>
+    <a class="btn btn-dark" href=<%="/characters"%>>Back to List</a>
 </div>
-<br>
-<form method="get" action="/logout">
-    <input class="btn btn-primary" type="submit" value="Logout">
-</form>
-<br>
-<form method="post" action="/character/<%= @character.id %>/delete">
-    <input class="btn btn-primary" type="submit" value="Delete Character">
-</form>
 
 
