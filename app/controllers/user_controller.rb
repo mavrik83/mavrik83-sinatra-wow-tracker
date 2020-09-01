@@ -27,6 +27,7 @@ class UserController < ApplicationController
           redirect to '/'
         end
       end
+    end
     
       end
     
