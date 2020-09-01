@@ -84,4 +84,25 @@ class CharacterController < ApplicationController
         end
     end
 
+    post '/characters/:id/edit' do
+        name = params[:name]
+        if ['!', '?', ';', '(', ')', '#'].any?{ |sym| name.include?(sym) } || name == ""
+            redirect to "/character/#{params[:id]}/edit"      
+        else
+            @character = Character.find(params[:id])
+            @character.update(
+                :name => params[:name],
+                :intellect => params[:intellect],
+                :strength => params[:strength],
+                :stamina => params[:stamina],
+                :agility => params[:agility],
+                :haste => params[:haste],
+                :versatility => params[:versatility],
+                :mastery => params[:mastery],
+                :crit_chance => params[:crit_chance]
+            )
+            @character.save
+            redirect to '/characters'
+        end
+    end
 end
