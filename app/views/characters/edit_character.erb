@@ -1,21 +1,45 @@
 <h4>Edit your character here:</h4>
 
-<form action=<%= "/characters/#{params[:id]}/edit" %> method="post">
-  <p>Name: <input type="text" name="name" value="<%= @character.name %>"></p>
-  <p>Intellect: <input type="number" name="intellect" value="<%= @character.intellect %>"></p>
-  <p>Strength: <input type="number" name="strength" value="<%= @character.strength %>"></p>
-  <p>Stamina: <input type="number" name="stamina" value="<%= @character.stamina %>"></p>
-  <p>Agility: <input type="number" name="agility" value="<%= @character.agility %>"></p>
-  <p>Haste: <input type="number" name="haste" value="<%= @character.haste %>"></p>
-  <p>Versatility: <input type="number" name="versatility" value="<%= @character.versatility %>"></p>
-  <p>Mastery: <input type="number" name="mastery" value="<%= @character.mastery %>"></p>
-  <p>Crit Chance: <input type="number" name="crit_chance" value="<%= @character.crit_chance %>"></p>
-  <input class="btn btn-primary" type="submit">
-</form>
-
-
-
-
-<form method="get" action="/logout">
-    <input class="btn btn-primary" type="submit" value="Logout">
-</form>
+<div>
+  <form action=<%= "/characters/#{params[:id]}/edit" %> method="post">
+    <div class="form-group">
+      <label for="formGroupExampleInput1">Character Name:</label>
+      <input type="text" class="form-control" id="formGroupExampleInput1" name="name" value="<%= @character.name %>" style="width: 200px;">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Intellect:</label>
+      <input type="number" class="form-control" id="formGroupExampleInput2" name="intellect" value="<%= @character.intellect %>" style="width: 200px;"> 
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput3">Strength:</label>
+      <input type="number" class="form-control" id="formGroupExampleInput3" name="strength" value="<%= @character.strength %>" style="width: 200px;">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput4">Stamina:</label>
+      <input type="number" class="form-control" id="formGroupExampleInput4" name="stamina" value="<%= @character.stamina %>" style="width: 200px;">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput5">Agility:</label>
+      <input type="number" class="form-control" id="formGroupExampleInput5" name="agility" value="<%= @character.agility %>" style="width: 200px;">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput6">Haste:</label>
+      <input type="number" class="form-control" id="formGroupExampleInput6" name="haste" value="<%= @character.haste %>" style="width: 200px;">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput7">Versatility:</label>
+      <input type="number" class="form-control" id="formGroupExampleInput7" name="versatility" value="<%= @character.versatility %>" style="width: 200px;">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput8">Mastery:</label>
+      <input type="number" class="form-control" id="formGroupExampleInput8" name="mastery" value="<%= @character.mastery %>" style="width: 200px;">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput9">Crit Chance:</label>
+      <input type="number" class="form-control" id="formGroupExampleInput9" name="crit_chance" value="<%= @character.crit_chance %>" style="width: 200px;">
+    </div>
+    <input class="btn btn-dark" type="submit">
+    <a class="btn btn-dark" href=<%="/character/#{@character.id}"%>>Back</a>
+  </form>
+</div>
+<br><br>
