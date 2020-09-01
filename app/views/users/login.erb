@@ -1,7 +1,13 @@
-<h3>Login</h3>
-<form method="post" action="/login">
-  <input type="text" name="username" placeholder="Username:">
-  <input type="text" name="password" placeholder="Password:">
-  <input class="btn btn-primary" type="submit" value="submit">
-</form>
+<h4>Please login:</h4>
+
 <p>Don't have an account? <a href="/signup">signup!</a><p>
+
+<form class="form-inline" method="post" action="/login">
+  <label class="sr-only" for="inlineFormInputName2"></label>
+  <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="username" placeholder="Username:">
+
+  <label class="sr-only" for="inlineFormInputName2"></label>
+  <input type="password" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="password" placeholder="Password:">
+
+  <button type="submit" class="btn btn-dark mb-2">Submit</button>
+</form>
