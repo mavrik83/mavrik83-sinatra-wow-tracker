@@ -18,6 +18,10 @@ class UserController < ApplicationController
       email = params[:email]
       if ['!', '?', ';', '(', ')', '#'].any?{ |sym| name.include?(sym) || email.include?(sym) } || name == "" || email == "" || params[:password] == ""
         redirect to '/signup'
+      else
+        @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
+        if @user.save
+          session[:user_id] = @user.id
           redirect to '/characters'
         else
           redirect to '/'
