@@ -1,3 +1,10 @@
 <h3>Welcome, <%= current_user.username %></h3>
 <h4>Here is a list of your characters</h4>
 
+<ul>
+<% @characters.each do |n|%>
+    <li>
+        <h5> <a href=<%="/character/#{n.id}"%>><%= n.name %></a></h5>
+    </li>
+<% end %>
+</ul>
