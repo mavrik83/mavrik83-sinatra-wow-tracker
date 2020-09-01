@@ -30,4 +30,15 @@ class CharacterController < ApplicationController
         end
     end
 
+    post '/character/:id/delete' do
+        if logged_in?
+            @character = Character.find(params[:id])
+            if @character && @character.user == current_user
+                @character.delete
+            end
+            redirect to '/characters'
+        else
+            redirect to '/'
+        end
+    end
 end
