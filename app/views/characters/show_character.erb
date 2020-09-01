@@ -1,0 +1,14 @@
+<h1>Test</h1>
+<div>
+    <h2>
+        <%= @character.name %>
+    </h2>
+    <ul>
+        <% (Character.last.attributes.keys - ["user_id", "id"]).each do |attr| %>
+            <li>
+                <%= "#{attr.capitalize} : #{@character.send(attr).to_s.capitalize}" %>
+            </li>
+        <% end %>
+    </ul>
+</div>
+
