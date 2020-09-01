@@ -15,6 +15,13 @@
   <div class="container">
     <h1 class="display-3">WoW Tracker</h1>
     <p class="lead">A simple tool for tracking your World of Warcraft Character stats.</p>
+    <% if logged_in? %>
+      <a class="btn btn-dark" href="/logout">Logout</a>
+    <% else %>
+      <p>Please <a href="/signup">sign up</a> or <a href="/login">login</a></p>
+    <% end %>
+  </div>
+</div>
     <div class="container">
         <%= yield %>
     </div>
