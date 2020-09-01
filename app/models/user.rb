@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
 
     has_many :characters
     validates :email, uniqueness: { case_sensitive: false }
+    validates :username, uniqueness: { case_sensitive: false }
     has_secure_password
 
     def slug
