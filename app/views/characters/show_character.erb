@@ -1,8 +1,8 @@
 <div>
-    <h2>
-        <%= @character.name.capitalize %>
-    </h2>
-    <ul>
+    <h4>
+        <%= @character.name.capitalize %>:
+    </h4>
+    <div>
         <% @character.as_json.each do |attr, value| %>
             <% next if ['id', 'name', 'user_id'].include?(attr) %>
             <li>
