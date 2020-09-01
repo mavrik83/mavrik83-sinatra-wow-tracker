@@ -10,7 +10,6 @@ class CharacterController < ApplicationController
         else
             redirect to '/'
         end
-
     end
     
     post '/characters' do
@@ -72,6 +71,14 @@ class CharacterController < ApplicationController
         end
     end
 
+    get '/character/:id/edit' do
+        if logged_in?
+            @character = Character.find(params[:id])
+            if @character && @character.user == current_user
+                erb :'characters/edit_character'
+            else
+                redirect to 'character/:id'
+            end
         else
             redirect to '/'
         end
