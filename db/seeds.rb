@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 u1 = User.create(username: 'Ryan', email: 'ryan@gmail.com', password: 'password')
 Character.create(name: 'argari', intellect: 10, strength: 10, stamina: 10, agility: 10, haste: 10, versatility: 10, mastery: 10, crit_chance: 10, user_id: u1.id)
 Character.create(name: 'tella', intellect: 10, strength: 10, stamina: 10, agility: 10, haste: 10, versatility: 10, mastery: 10, crit_chance: 10, user_id: u1.id)
