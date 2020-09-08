@@ -1,4 +1,5 @@
 <div>
+    <p><%= flash[:error] %></p>
     <% if logged_in? %>
         <% redirect to '/characters' %>
     <% else %>

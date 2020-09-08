@@ -38,6 +38,7 @@ class UserController < ApplicationController
         session[:user_id] = user.id
         redirect to "/characters"
       else
+        flash[:error] = "Please enter valid credentials or signup"
         redirect to '/'
       end
     end
