@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 source 'http://rubygems.org'
 
-gem 'sinatra'
-gem 'activerecord', :require => 'active_record'
-gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
+gem 'activerecord', require: 'active_record'
+gem 'bcrypt'
+gem 'pry'
 gem 'rake'
 gem 'require_all'
-gem 'sqlite3'
 gem 'shotgun'
-gem 'pry'
-gem 'bcrypt'
+gem 'sinatra'
+gem 'sinatra-activerecord', require: 'sinatra/activerecord'
 gem 'sinatra-flash'
+gem 'sqlite3'
